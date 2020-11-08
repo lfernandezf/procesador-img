@@ -31,6 +31,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     MatSidenavModule,
     MatExpansionModule,
     LayoutModule,
@@ -51,10 +52,12 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     MatCheckboxModule,
     MatAutocompleteModule,
     MatSelectModule,
-    MatRadioModule,    
-    ReactiveFormsModule
+    MatRadioModule  
+    
   ],
   exports: [
+    FormsModule,
+    ReactiveFormsModule,
     MatSidenavModule,
     MatExpansionModule,
     LayoutModule,

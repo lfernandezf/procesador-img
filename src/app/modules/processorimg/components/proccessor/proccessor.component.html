@@ -1,1 +1,42 @@
-<p>proccessor works!</p>
+<image-upload  (uploadFinished)="onUploadFinish($event)"></image-upload>
+<button class="btn btn-primary" (click)="pdf()">Download PDF</button>
+
+
+<!-- <button mat-button color="warn" (click)="onClick()">
+    <mat-icon>file_upload</mat-icon>
+    {{text}}
+  </button>
+  <br/>
+  <ul>
+    <li *ngFor="let file of files" >
+          <mat-progress-bar [value]="file.progress"></mat-progress-bar>
+          <span id="file-label">
+          {{file.data.name}}
+          <a title="Retry" (click)="retryFile(file)" *ngIf="file.canRetry">
+          <mat-icon>refresh</mat-icon></a>
+          <a title="Cancel" (click)="cancelFile(file)" *ngIf="file.canCancel">
+          <mat-icon>cancel</mat-icon></a>
+          </span>
+    </li>
+  </ul>
+  <input    
+    type="image"
+    id="fileUpload"
+    name="fileUpload"
+    multiple="multiple"
+    accept="{{accept}}"
+    style="display:none;"/> -->
+
+    <!-- <input #imgInput type="file"/>
+    <button (click)="addFile()">Add</button>
+    <button class="btn btn-primary" (click)="pdf()">Download PDF</button>
+    <br/>
+    <ul>
+      <li *ngFor="let file of files" >           
+            <span id="file-label"> 
+               <img src="{{ file.src.src }}" >
+               <a title="Cancel" (click)="cancelFile(file)" *ngIf="file.canCancel">
+               <mat-icon>cancel</mat-icon></a>
+            </span>
+      </li>
+    </ul> -->

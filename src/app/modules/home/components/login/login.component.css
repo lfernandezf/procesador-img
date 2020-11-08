@@ -1,0 +1,36 @@
+.loginform {
+    width: 25%;
+    position: fixed;
+    left: 55%;
+    top: 10rem;
+    padding: 2rem 5rem;
+}
+
+.loginform-tittle {
+    margin-bottom: 2rem;
+}
+
+.loginform-tittle h2 {
+    margin: 0 !important;
+    font-size: 1.5rem;
+}
+
+.loginform-tittle p {
+    font-size: 0.8rem;
+}
+
+.full-width {
+    width: 100%;
+    margin: 0.5rem 0;
+}
+
+
+.loginform-button{
+    margin: 1rem 0 2rem 0;
+}
+
+
+.loginform-button button {
+    width: calc(50% - 2rem);
+    margin: 0 1rem;
+}

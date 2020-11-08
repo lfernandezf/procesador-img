@@ -1,0 +1,11 @@
+@import "assets/css/main.css";
+html, body { height: 100%; }
+body { margin: 0; }
+
+
+/*Login style*/
+
+.container-login, .container-register {
+    width: 100%;
+    height: 100%;
+}

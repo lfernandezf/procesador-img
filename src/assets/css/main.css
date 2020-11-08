@@ -1,0 +1,118 @@
+@font-face {
+    font-family: "Montserrat Black";
+    src: url("../Fonts/Montserrat/Montserrat-Black.ttf");
+}
+@font-face {
+    font-family: "Montserrat BlackItalic";
+    src: url("../Fonts/Montserrat/Montserrat-BlackItalic.ttf");
+}
+
+@font-face {
+    font-family: "Montserrat Bold";
+    src: url("../Fonts/Montserrat/Montserrat-Bold.ttf");
+}
+
+@font-face {
+    font-family: "Montserrat BoldItalic";
+    src: url("../Fonts/Montserrat/Montserrat-BoldItalic.ttf");
+}
+
+@font-face {
+    font-family: "Montserrat ExtraBold";
+    src: url("../Fonts/Montserrat/Montserrat-ExtraBold.ttf");
+}
+
+
+@font-face {
+    font-family: "Montserrat ExtraBoldItalic";
+    src: url("../Fonts/Montserrat/Montserrat-ExtraBoldItalic.ttf");
+}
+
+
+@font-face {
+    font-family: "Montserrat ExtraLight";
+    src: url("../Fonts/Montserrat/Montserrat-ExtraLight.ttf");
+}
+
+@font-face {
+    font-family: "Montserrat ExtraLightItalic";
+    src: url("../Fonts/Montserrat/Montserrat-ExtraLightItalic.ttf");
+}
+
+@font-face {
+    font-family: "Montserrat Italic";
+    src: url("../Fonts/Montserrat/Montserrat-Italic.ttf");
+}
+
+@font-face {
+    font-family: "Montserrat Light";
+    src: url("../Fonts/Montserrat/Montserrat-Light.ttf");
+}
+
+@font-face {
+    font-family: "Montserrat LightItalic";
+    src: url("../Fonts/Montserrat/Montserrat-LightItalic.ttf");
+}
+@font-face {
+    font-family: "Montserrat Medium";
+    src: url("../Fonts/Montserrat/Montserrat-Medium.ttf");
+}
+
+body, html {
+    height: 100%;
+    margin: 0;   
+    font-family: "Montserrat ExtraLight"
+}
+/* fornt family */
+
+.text-montserrat-black{
+    font-family: "Montserrat Black";
+}
+.text-montserrat-blackitalic{
+    font-family: "Montserrat BlackItalic";
+} 
+.text-montserrat-bold {
+    font-family: "Montserrat Bold";
+}
+.text-montserrat-bolditalic{
+  font-family: "Montserrat BoldItalic";
+}
+
+.text-montserrat-extrabold {
+    font-family: "Montserrat ExtraBold";
+}
+
+.text-montserrat-extrabolditalic {
+    font-family: "Montserrat ExtraBoldItalic";
+}
+.text-montserrat-extralight{
+    font-family: "Montserrat ExtraLight";
+}
+.text-montserrat-extralightitalic {
+   font-family: "Montserrat ExtraLightItalic";
+}    
+
+.text-montserrat-italic {
+    font-family: "Montserrat Italic";
+}
+.text-montserrat-light {
+    font-family: "Montserrat Light";
+}
+.text-montserrat-lightitalic {
+    font-family: "Montserrat LightItalic";
+}
+.text-montserrat-medium {
+    font-family: "Montserrat Medium";
+}
+/*en font family*/
+
+.text-green{
+    color: rgba(159, 199, 57);
+}
+.text-blue{
+    color: rgb(42, 167, 223    );
+}
+
+.tex-black{
+    color: #000000;
+}

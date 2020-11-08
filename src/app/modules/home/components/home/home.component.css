@@ -1,0 +1,55 @@
+.content-image {
+    display: flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    background-image:  url("../../../../../assets/img/header.png");
+    min-height: 15em;
+    align-self: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 8em;
+}
+      
+.hero-text {
+    color: #000000;
+}
+@media (min-width: 600px) {
+    .hero-text {
+        text-align: left;
+        width: 50%;
+    }
+}
+@media (max-width: 600px) {
+    .hero-text {
+        text-align: center;
+        width: 100%;
+    }
+}
+
+.hero-header{
+    align-self: left;
+    font-size:50px;
+}
+
+.hero-image {   
+    align-self: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.hero-login {   
+    align-self: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.hero-text h1, .woloxer-text h1{
+    margin: 0;
+    padding: 0;
+}

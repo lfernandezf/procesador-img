@@ -1,7 +1,7 @@
-import { loginEffects } from './login.effects';
+import { LoginEffects } from './login.effects';
 
 
 export const loginEffectsArr: any [] = [
-    loginEffects,
+    LoginEffects,
 ]
 

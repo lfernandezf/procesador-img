@@ -19,7 +19,7 @@ export const estadoInicialLogin: LogoutState = {
 }
 
 
-export function logoutReducer( actions: fromLogout.loginAcciones, state = estadoInicialLogin): LogoutState{
+export function logoutReducer( state = estadoInicialLogin, actions: fromLogout.loginAcciones): LogoutState{
     switch (actions.type) {
         case fromLogout.CARGAR_LOGOUT:
             

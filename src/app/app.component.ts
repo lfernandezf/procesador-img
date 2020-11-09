@@ -40,7 +40,7 @@ export class AppComponent {
       if(logout.data != null){
          if(logout.data.success  === true){
            this.showMenu = false;
-           this.router.navigate(['procesor']);
+           this.router.navigate(['login']);
          }
       }
    });

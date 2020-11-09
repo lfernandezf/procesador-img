@@ -1,35 +1,91 @@
-import { TestBed, async } from '@angular/core/testing';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { TestBed, async, ComponentFixture, inject } from '@angular/core/testing';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { Route, Router } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
+import { Actions } from '@ngrx/effects';
+import { provideMockActions } from '@ngrx/effects/testing';
+import { Store, StoreModule } from '@ngrx/store';
+import { provideMagicalMock } from 'angular-testing-library/src/service_mock';
+import { Observable, of } from 'rxjs';
 import { AppComponent } from './app.component';
+import { TestStore } from './mocks/teststore';
+import { LoginComponent } from './modules/home/components/login/login.component';
+import { Location } from '@angular/common';
+import { LoginService } from './services/login/login.service';
+import { AppState } from './store/app.reducer';
+import { LoginEffects } from './store/login/effects/login.effects';
+import { CargarLogout } from './store/login/actions/logout.actions';
 
 describe('AppComponent', () => {
+  let component: AppComponent;
+  let fixture: ComponentFixture<AppComponent>;
+  let store: TestStore<AppState>;
+  let effects: LoginEffects;
+  let actions: Observable<any>;
+  let queryService: LoginService;
+  let httpClient: HttpClient;
+  let router: Route;
+  let location: Location;
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        HttpClientModule,
+        FormsModule,
+        ReactiveFormsModule,
+        StoreModule.forRoot({}),
+        RouterTestingModule.withRoutes([
+          { path: 'login', component: LoginComponent }
+        ])
       ],
       declarations: [
-        AppComponent
+        AppComponent,
+        LoginComponent
       ],
+      providers: [
+        {
+        provide: Store,
+        useClass: TestStore,
+        LoginService
+      },
+        LoginEffects,
+      provideMockActions(() => actions),
+      provideMagicalMock(LoginService)
+      ]
     }).compileComponents();
+    actions = TestBed.inject(Actions);
+    effects = TestBed.inject(LoginEffects);
+    queryService = TestBed.inject(LoginService);
   }));
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
-  });
-
-  it(`should have as title 'procesador-img'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('procesador-img');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
+  beforeEach(inject([Store], (testStore: TestStore<AppState>) => {
+    store = testStore;
+    store.setState({ data: [] });
+    fixture = TestBed.createComponent(AppComponent);
+    component = fixture.componentInstance;
+    router = TestBed.get(Router);
+    location = TestBed.inject(Location);
     fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('procesador-img app is running!');
+    queryService = new LoginService(httpClient);
+  }));
+  it('should create', () => {
+    store.setState({ login: { authorized: true } });
+    expect(component).toBeTruthy();
   });
+  
+  it('Deberia disparar la accion CargarLogout  in el closeRouter', () => {
+    store.setState({ logout: { data: { success: true }} });
+    fixture.detectChanges();
+    let data = {
+      "nit": "1236456789"
+    }
+    const action = new CargarLogout(data);
+    actions = of(action);
+    const StoreR = TestBed.get(Store);
+    const spy = spyOn(store, 'dispatch');
+    StoreR.dispatch();
+    component.closeRouter();
+    expect(spy).toHaveBeenCalled();
+    expect(effects).toBeTruthy();
+ });
 });

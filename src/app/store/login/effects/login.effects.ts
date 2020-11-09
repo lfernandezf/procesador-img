@@ -7,7 +7,7 @@ import { switchMap, map, catchError } from "rxjs/operators";
 import { LoginService } from 'src/app/services/login/login.service';
 
 @Injectable()
-export class loginEffects {
+export class LoginEffects {
 
     constructor(private actions$ : Actions, public loginService: LoginService){}
 

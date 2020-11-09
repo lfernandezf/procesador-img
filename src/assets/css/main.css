@@ -61,48 +61,48 @@
 body, html {
     height: 100%;
     margin: 0;   
-    font-family: "Montserrat ExtraLight"
+    font-family: "Montserrat ExtraLight", Arial, Verdana, Tahoma, sans-serif;
 }
 /* fornt family */
 
 .text-montserrat-black{
-    font-family: "Montserrat Black";
+    font-family: "Montserrat Black", Arial, Verdana, Tahoma, sans-serif;
 }
 .text-montserrat-blackitalic{
-    font-family: "Montserrat BlackItalic";
+    font-family: "Montserrat BlackItalic", Arial, Verdana, Tahoma, sans-serif;
 } 
 .text-montserrat-bold {
-    font-family: "Montserrat Bold";
+    font-family: "Montserrat Bold", Arial, Verdana, Tahoma, sans-serif;
 }
 .text-montserrat-bolditalic{
-  font-family: "Montserrat BoldItalic";
+  font-family: "Montserrat BoldItalic", Arial, Verdana, Tahoma, sans-serif;
 }
 
 .text-montserrat-extrabold {
-    font-family: "Montserrat ExtraBold";
+    font-family: "Montserrat ExtraBold", Arial, Verdana, Tahoma, sans-serif;
 }
 
 .text-montserrat-extrabolditalic {
-    font-family: "Montserrat ExtraBoldItalic";
+    font-family: "Montserrat ExtraBoldItalic", Arial, Verdana, Tahoma, sans-serif;
 }
 .text-montserrat-extralight{
-    font-family: "Montserrat ExtraLight";
+    font-family: "Montserrat ExtraLight", Arial, Verdana, Tahoma, sans-serif;
 }
 .text-montserrat-extralightitalic {
-   font-family: "Montserrat ExtraLightItalic";
+   font-family: "Montserrat ExtraLightItalic", Arial, Verdana, Tahoma, sans-serif;
 }    
 
 .text-montserrat-italic {
-    font-family: "Montserrat Italic";
+    font-family: "Montserrat Italic", Arial, Verdana, Tahoma, sans-serif;
 }
 .text-montserrat-light {
-    font-family: "Montserrat Light";
+    font-family: "Montserrat Light", Arial, Verdana, Tahoma, sans-serif;
 }
 .text-montserrat-lightitalic {
-    font-family: "Montserrat LightItalic";
+    font-family: "Montserrat LightItalic", Arial, Verdana, Tahoma, sans-serif;
 }
 .text-montserrat-medium {
-    font-family: "Montserrat Medium";
+    font-family: "Montserrat Medium", Arial, Verdana, Tahoma, sans-serif;
 }
 /*en font family*/
 

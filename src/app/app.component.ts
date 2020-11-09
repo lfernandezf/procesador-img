@@ -10,8 +10,7 @@ import { ReiciarValores } from './store/login/actions/login.actions';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  templateUrl: './app.component.html'
 })
 export class AppComponent {
   showMenu: boolean = false;

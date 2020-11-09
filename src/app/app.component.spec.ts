@@ -1,7 +1,6 @@
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { TestBed, async, ComponentFixture, inject } from '@angular/core/testing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { Route, Router } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { Actions } from '@ngrx/effects';
 import { provideMockActions } from '@ngrx/effects/testing';
@@ -11,7 +10,6 @@ import { Observable, of } from 'rxjs';
 import { AppComponent } from './app.component';
 import { TestStore } from './mocks/teststore';
 import { LoginComponent } from './modules/home/components/login/login.component';
-import { Location } from '@angular/common';
 import { LoginService } from './services/login/login.service';
 import { AppState } from './store/app.reducer';
 import { LoginEffects } from './store/login/effects/login.effects';
@@ -23,10 +21,6 @@ describe('AppComponent', () => {
   let store: TestStore<AppState>;
   let effects: LoginEffects;
   let actions: Observable<any>;
-  let queryService: LoginService;
-  let httpClient: HttpClient;
-  let router: Route;
-  let location: Location;
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
@@ -55,18 +49,14 @@ describe('AppComponent', () => {
     }).compileComponents();
     actions = TestBed.inject(Actions);
     effects = TestBed.inject(LoginEffects);
-    queryService = TestBed.inject(LoginService);
   }));
 
   beforeEach(inject([Store], (testStore: TestStore<AppState>) => {
     store = testStore;
     store.setState({ data: [] });
     fixture = TestBed.createComponent(AppComponent);
-    component = fixture.componentInstance;
-    router = TestBed.get(Router);
-    location = TestBed.inject(Location);
+    component = fixture.componentInstance;  
     fixture.detectChanges();
-    queryService = new LoginService(httpClient);
   }));
   it('should create', () => {
     store.setState({ login: { authorized: true } });

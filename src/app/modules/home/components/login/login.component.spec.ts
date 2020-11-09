@@ -1,14 +1,11 @@
 import { async, ComponentFixture, inject, TestBed } from '@angular/core/testing';
-
 import { LoginComponent } from './login.component';
-import { Location } from '@angular/common';
 import { TestStore } from 'src/app/mocks/teststore';
 import { AppState } from 'src/app/store/app.reducer';
 import { LoginEffects } from 'src/app/store/login/effects/login.effects';
 import { Observable } from 'rxjs';
 import { LoginService } from 'src/app/services/login/login.service';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { Route, Router } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Store, StoreModule } from '@ngrx/store';
 import { RouterTestingModule } from '@angular/router/testing';
@@ -25,10 +22,6 @@ describe('LoginComponent', () => {
   let store: TestStore<AppState>;
   let effects: LoginEffects;
   let actions: Observable<any>;
-  let queryService: LoginService;
-  let httpClient: HttpClient;
-  let router: Route;
-  let location: Location;
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ LoginComponent , ProccessorComponent],
@@ -55,7 +48,6 @@ describe('LoginComponent', () => {
     .compileComponents();
     actions = TestBed.inject(Actions);
     effects = TestBed.inject(LoginEffects);
-    queryService = TestBed.inject(LoginService);
   })); 
 
   beforeEach(inject([Store], (testStore: TestStore<AppState>) => {
@@ -63,10 +55,7 @@ describe('LoginComponent', () => {
     store.setState({ data: [] });
     fixture = TestBed.createComponent(LoginComponent);
     component = fixture.componentInstance;
-    router = TestBed.get(Router);
-    location = TestBed.inject(Location);
     fixture.detectChanges();
-    queryService = new LoginService(httpClient);
   }));
 
   it('should create', () => {

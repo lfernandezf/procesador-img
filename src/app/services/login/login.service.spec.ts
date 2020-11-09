@@ -22,7 +22,7 @@ describe('LoginService', () => {
     it('should be created', () => {
       expect(service).toBeTruthy();
     });
-    it('Debe obtener los datos de login',  inject([LoginService], (service: LoginService) => {
+    it('Debe obtener los datos de login',  inject([LoginService], () => {
       const mockResponse = {
         token: 'qiowAS9ndnjLKSS32LaLAPlDKL2'
       };

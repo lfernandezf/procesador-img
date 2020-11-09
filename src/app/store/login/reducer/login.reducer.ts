@@ -19,7 +19,7 @@ export const estadoInicialLogin: LoginState = {
 }
 
 
-export function loginReducer( state = estadoInicialLogin, actions: fromLogin.loginAcciones): LoginState{
+export function loginReducer( actions: fromLogin.loginAcciones, state = estadoInicialLogin): LoginState{
     switch (actions.type) {
         case fromLogin.CARGAR_LOGIN:
             

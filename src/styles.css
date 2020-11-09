@@ -9,3 +9,7 @@ body { margin: 0; }
     width: 100%;
     height: 100%;
 }
+
+.img-ul-file-upload  label.img-ul-upload.img-ul-button span{
+    color:  #000 !important;
+  }
